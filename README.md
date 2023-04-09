@@ -10,7 +10,7 @@ how it compiles source code, and finally how the scoping chain works.
 You might be wondering *'Why??'* and the answer is that all of this comes from:
 1. My insatiable, restless curiosity;
 2. The importance of reading your own code like JavaScript would read it. This helps to spot what could be wrong when you have a bug.
-3. The *'return'* and the *'this'* keyword making no sense to me. I got to a point on my learning that sure, I can implement these too and make them work, but I couldn't REALLY understand what was *'this'* and where TF where I returning from. 
+3. The *'return'* and the *'this'* keyword making no sense to me. I got to a point on my learning that sure, I can implement these two and make them work, but I couldn't REALLY understand what was *'this'* and where TF where I returning from. 
 
 Please start to read from page 1 to 3. If you know enough about the Engine, of course you can skip to the scoping files.
 <br>
