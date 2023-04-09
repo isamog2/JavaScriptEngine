@@ -92,7 +92,7 @@ This means that, after the JavaScript engine searches for the identifiers within
 
 These other variables are defined outside of the function scope, but within its lexical scope. The search goes from the inner to outer scopes until the engine reaches the global scope and then it stops, whether it found them or not. Just like the building we saw on the previous page:
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%2020230406121730.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230406121730.png)
 
 ### Second() local/function/block scope:
 ``` js

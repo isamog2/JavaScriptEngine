@@ -11,7 +11,7 @@ On the last page, we saw that the Execution Context comprehends:
 - Scope chain
 - This keyword
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104520.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104520.png)
 
 The `second();` **Execution Context:** made of the variable environment, scope chain and any possible "this" keywords the function `second();` might have.
 
@@ -19,7 +19,7 @@ The `second();` **Execution Context:** made of the variable environment, scope c
 
 The variable environment is created every time a new function is called, and it holds all the information about the function's local variables, parameters, and inner functions - everything that is in the scope of the code currently being executed.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230406111742.png)]
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230406111742.png)]
 
 The variable environment is an important concept because when a variable is referenced, the JavaScript engine:
 
@@ -52,7 +52,7 @@ SIMPSON K.: You Don’t Know JS: Scope & Closures. 2014.
 - Variables declared in the global scope are accessible everywhere.
 - If the identifier is not located anywhere within the lexical scope, the last place to look for is the global scope.
 - The engine stops searching after the Global scope, whether it found the identifier or not.
-  ![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230406121730.png)
+  ![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230406121730.png)
 (Picture from SIMPSON K.: You Don’t Know JS: Scope & Closures. 2014). 
 
 ### Function scope

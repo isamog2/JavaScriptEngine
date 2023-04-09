@@ -5,10 +5,10 @@ JavaScript Engines are programs that execute JS code. Browsers, for example, hav
 
 Each browser has its own JS Engine and V8 is the engine that powers Google Chrome and Node.js.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230327142157.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230327142157.png)
 
 Every JavaScript Engine is composed of a CallStack and a Heap:
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230327133411.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230327133411.png)
 
 The memory heap is an unstructured memory pool, where the objects are stored.
 The call stack is where the code is executed considering its execution context.
@@ -77,7 +77,7 @@ The entire AST code is converted into machine code and doesn't get stored in a p
 It's not fully translated at once and only executed later on, but it's also not read and executed line by line. It's fully translated at once and then immediately executed.
 
 During Just in time compilation, JavaScript first creates an unoptimized machine language to start executing as soon as possible. In the background, this "bad machine code" is being optimised and recompiled during the program execution.
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230327140534.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230327140534.png)
 
 This last part happens completely separated from the CallStack, in some special threads inside the engine that we cannot access through our code, and it's the reason why V8 is so fast.
 
@@ -110,11 +110,11 @@ APIs are functionalities provided to the engine, who are not part of the JS engi
 Example: you create an App and would like it to connect to other apps. It would be a huge problem if you had to create custom integrations for each possible App. 
 You can build an API into your application: a doorway where third-party applications can get access to the data and features of our App without the need to provide any custom code whatsoever.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230327143422.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230327143422.png)
 
 For this other App the access a feature that we built for example, it will send an API request. 
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230327143704.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230327143704.png)
 
 The API request is an HTTP message. It can be a "get" request, some of these most common requests:
 - Post
@@ -304,7 +304,7 @@ const x = first();
 
 Since it's the only one there at that point, it's on top of the call stack, so it's executed first:
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328103440.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328103440.png)
 
 On the last line, we declare `const x = first();` so the function `first();` is called.
 Top-level code gets executed without being called, as it's part of the Global context. **Functions, on the other hand, need to be called** in order to create an execution context and be executed.
@@ -313,28 +313,28 @@ Once this function is called, it gets its own execution context so it can run th
 
 At this point, the Execution Context of first() gets moved on top of the global context within the Call Stack. Since the first() is now on top, global context execution pauses for the first() EC to be executed:
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104207.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104207.png)
 
 On the second line of first(), second() gets called with the arguments (7, 9). 
 Once this is done, it creates an execution context for second(). The execution of first() pauses and second() gets moved to the top of the stack for its execution.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104520.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104520.png)
 
 On the last line of function second() we have a "return c;". The "return" means that we are ceasing the execution of this function. So the function second() execution context will be popped off the call stack. 
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104706.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104706.png)
 
 The previous execution context is now back to being the active execution context.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104811.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104811.png)
 
 We're back to the first function but now on the third line (a = a + b;). After this calculation, we have a "return a", this means that first() will also be popped off the call stack.
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328104929.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328104929.png)
 
 Then the global context will be the first in line again. We are back at the Global Execution Context, but now at the last line. This time, the return value is finally assigned to X, and the execution is finished. 
 
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328105225.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328105225.png)
 
 The program will stay in this state forever, at least until we close the browser. The global execution context is only popped off the call stack when we close the browser.
-![](https://github.com/isamog2/StudiesMadeVisual/blob/main/ObsidianSharing/Obsidian%20Vault/Images/Pasted%20image%2020230328105225.png)
+![](https://github.com/isamog2/JavaScriptEngine/blob/main/Images/Pasted%20image%2020230328105225.png)
